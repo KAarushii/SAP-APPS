@@ -1,0 +1,30 @@
+<mvc:View controllerName="projectemployee.controller.Dept"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>DeptTitle}"
+        showNavButton="true" navButtonPress=".onNavBack">
+    <content>
+          <Table id="_IDGenTable1" items="{Department>/}" mode="SingleSelectLeft">
+             <columns>
+                     <Column id="_IDGenColumn14">
+                        <Label id="_IDGenLabel14" text="ID"></Label>
+                     </Column>
+                     <Column id="_IDGenColumn1">
+                        <Label id="_IDGenLabel1" text="dep_name"></Label>
+                     </Column>
+                     
+              </columns>
+
+             <items>
+                  <ColumnListItem id="_IDGenColumnListItem1" type="Navigation" press="onNavToDetails" >
+                        <cells>
+                              <Text id="_IDGenText14" text = "{Department>ID}"></Text>
+                              <Text id="_IDGenText1" text = "{Department>dep_name}"></Text>
+                        </cells>
+                  </ColumnListItem>
+             </items>
+           </Table>
+    </content>
+
+    </Page>    
+</mvc:View>

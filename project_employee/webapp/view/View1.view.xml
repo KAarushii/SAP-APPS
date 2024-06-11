@@ -1,0 +1,142 @@
+<mvc:View xmlns:calendar="sap.ui.unified.calendar" controllerName="projectemployee.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+	 xmlns:core="sap.ui.core"
+	height="100%">
+    <Page id="page"  title="{i18n>Viewtitle}" >
+        <content>
+         <Toolbar id="_IDGenToolbar01">
+             	<SearchField ariaLabelledBy="text1" id="name" liveChange="onFilter">
+							<layoutData>
+                           <OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData1" maxWidth="300px" shrinkable="true" priority="NeverOverflow"/>
+                     </layoutData>
+					</SearchField>
+                  
+			  
+		   </Toolbar>
+         
+			
+				
+		
+         <f:SidePanel id="mySidePanel" toggle="onToggle">
+				<f:mainContent>
+          
+				<Toolbar id="_IDGenToolbar2">
+					<Title id="_IDGenTitle1" level="H3" text="Employee List" />
+					<ToolbarSpacer id="_IDGenToolbarSpacer3" />
+					
+				</Toolbar>
+
+  <IconTabBar
+		id="idIconTabBar"
+		select=".onFilterSelect"
+		class="sapUiResponsiveContentPadding">
+		<items>
+			<IconTabFilter id="_IDGenIconTabFilter1"
+				showAll="true"
+				count="{/ProductCollectionStats/Counts/Total}"
+				text="Departments"
+				key="All" />
+			<IconTabSeparator id="_IDGenIconTabSeparator1" />
+			<IconTabFilter id="_IDGenIconTabFilter2"
+				icon="sap-icon://begin"
+				iconColor="Positive"
+				count="{/ProductCollectionStats/Counts/SAP-ABAP/Ok}"
+				text="SAP-ABAP"
+				key="ABAP" />
+			<IconTabFilter id="_IDGenIconTabFilter3"
+				icon="sap-icon://compare"
+				iconColor="Critical"
+				count="{/ProductCollectionStats/Counts/SAP-DIGITAL/Heavy}"
+				text="SAP-DIGITAL"
+				key="DIGITAL" />
+			
+		</items>
+		<content>
+
+      <Toolbar id="_IDGenToolbar1">
+             	
+                  
+			   <ToolbarSpacer id="_IDGenToolbarSpacer1"/>
+				<ToolbarSpacer id="_IDGenToolbarSpacer2"/>
+        		<!-- <Button id="_IDGenButton1" icon="sap-icon://add-employee" press="onFiltering" /> -->
+            <Button id="saveButton" icon="sap-icon://add" tooltip="Add Employee"  press ="onRowClick"  />
+            <OverflowToolbarButton id="_IDGenOverflowToolbarButton1" tooltip="Favorite" text="Favorite" icon="sap-icon://favorite"/>
+				<OverflowToolbarButton id="_IDGenOverflowToolbarButton2" tooltip="Flag" text="Flag" icon="sap-icon://flag"/>
+				<!-- <Button id="_IDGenButton2" icon="sap-icon://edit" type="Transparent" press="onPress" ariaLabelledBy="editButtonLabel"/> -->
+		   </Toolbar>
+         
+			<Table id="_IDGenTable1" items="{path: 'Employees>/' ,parameters:{expand: 'department'}}" mode="SingleSelectLeft">
+                <columns>
+                     <Column id="_IDGenColumn1">
+                        <Label id="_IDGenLabel1" text="ID"></Label>
+                     </Column>
+                     <Column id="_IDGenColumn2">
+                       <Label id="_IDGenLabel2" text="Name"></Label>
+                      </Column>
+                     <Column id="_IDGenColumn3">
+                        <Label id="_IDGenLabel3" text="Department"></Label>
+                     </Column>
+                     <Column id="_IDGenColumn4">
+                        <Label id="_IDGenLabel4" text="Email ID"></Label>
+                     </Column>
+                </columns>
+
+             <items>
+                  <ColumnListItem id="_IDGenColumnListItem1" type="Navigation" press=".onNavToDetails">
+                        <cells>
+                              <Text id="_IDGenText1" text = "{Employees>ID}"></Text>
+                              <Text id="_IDGenText2" text = "{Employees>name}"></Text>
+                              <Text id="_IDGenText3" text = "{Employees>department/dep_name}"></Text>
+                              <Text id="_IDGenText4" text = "{Employees>email_id}"></Text>
+                        </cells>
+                  </ColumnListItem>
+             </items>
+           </Table>
+		</content>
+	</IconTabBar>
+		
+            <!-- <Table id="_IDGenTable1" items="{path: 'Employees>/' ,parameters:{expand: 'department'}}" mode="SingleSelectLeft">
+                <columns>
+                     <Column id="_IDGenColumn1">
+                        <Label id="_IDGenLabel1" text="ID"></Label>
+                     </Column>
+                     <Column id="_IDGenColumn2">
+                       <Label id="_IDGenLabel2" text="Name"></Label>
+                      </Column>
+                     <Column id="_IDGenColumn3">
+                        <Label id="_IDGenLabel3" text="Department"></Label>
+                     </Column>
+                     <Column id="_IDGenColumn4">
+                        <Label id="_IDGenLabel4" text="Email ID"></Label>
+                     </Column>
+                </columns>
+
+             <items>
+                  <ColumnListItem id="_IDGenColumnListItem1" type="Navigation" press=".onNavToDetails">
+                        <cells>
+                              <Text id="_IDGenText1" text = "{Employees>ID}"></Text>
+                              <Text id="_IDGenText2" text = "{Employees>name}"></Text>
+                              <Text id="_IDGenText3" text = "{Employees>department/dep_name}"></Text>
+                              <Text id="_IDGenText4" text = "{Employees>email_id}"></Text>
+                        </cells>
+                  </ColumnListItem>
+             </items>
+           </Table> -->
+         </f:mainContent>
+         <f:items>
+					<f:SidePanelItem id="_IDGenSidePanelItem1" icon="sap-icon://building" text="Go to office">
+						<VBox id="_IDGenVBox2">
+							<Text id="_IDGenText02" text="Static Content" class="sapUiSmallMarginBottom" />
+							<Text id="_IDGenText03" text="" />
+							<Switch id="_IDGenSwitch1" />
+							<Button id="_IDGenButton3" text="Press me" />
+						</VBox>
+					</f:SidePanelItem>
+				</f:items>
+			</f:SidePanel>
+        </content>
+
+    </Page>
+</mvc:View>

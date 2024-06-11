@@ -1,0 +1,54 @@
+<mvc:View xmlns:table="sap.ui.table" controllerName="project_emp.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    
+    <Page id="page" title="{i18n>detailPageTitle}"
+    showNavButton="true" navButtonPress=".onNavBack">
+    <content>
+    <Table id="_IDGenTable1" items="{Employees>/}" mode="SingleSelectLeft">
+             <columns>
+                     <Column id="_IDGenColumn14">
+                        <Label id="_IDGenLabel14" text="ID"></Label>
+                     </Column>
+                     <Column id="_IDGenColumn1">
+                        <Label id="_IDGenLabel1" text="name"></Label>
+                     </Column>
+                     <Column id="_IDGenColumn2">
+                       <Label id="_IDGenLabel2" text="department"></Label>
+                      </Column>
+                     <Column id="_IDGenColumn3">
+                        <Label id="_IDGenLabel3" text="email_id"></Label>
+                     </Column>
+                     <Column id="_IDGenColumn4">
+                        <Label id="_IDGenLabel4" text="createdBy"></Label>
+                     </Column>
+                     <Column id="_IDGenColumn5">
+                        <Label id="_IDGenLabel5" text="createdAt"></Label>
+                     </Column>
+                     <Column id="_IDGenColumn6">
+                        <Label id="_IDGenLabel6" text="modifiedBy"></Label>
+                     </Column>
+                     <Column id="_IDGenColumn7">
+                        <Label id="_IDGenLabel7" text="modifiedAt"></Label>
+                     </Column>
+              </columns>
+
+             <items>
+                  <ColumnListItem id="_IDGenColumnListItem1" type="Navigation" press="onNavToDetails" >
+                        <cells>
+                              <Text id="_IDGenText14" text = "{Employees>ID}"></Text>
+                              <Text id="_IDGenText1" text = "{Employees>name}"></Text>
+                              <Text id="_IDGenText2" text = "{Employees>department}"></Text>
+                              <Text id="_IDGenText3" text = "{Employees>email_id}"></Text>
+                              <Text id="_IDGenText4" text = "{Employees>createdBy}"></Text>
+                              <Text id="_IDGenText5" text = "{Employees>createdAt}"></Text>
+                              <Text id="_IDGenText6" text = "{Employees>modifiedBy}"></Text>
+                              <Text id="_IDGenText7" text = "{Employees>modifiedAt}"></Text>
+                       </cells>
+                  </ColumnListItem>
+             </items>
+           </Table>
+    </content>
+    </Page>
+</mvc:View>
+
